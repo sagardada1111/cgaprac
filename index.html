@@ -1,0 +1,682 @@
+<h3> prac 1(a):-Study and enlist the basic function used for the graphics in c,c++ language giver an exampple for each of them</h3>
+<p>
+    <pre>
+#include graphics.h>
+#include conio.h>
+#include stdio.h>
+void main()
+{
+int gd=DETECT,gm,left=100,top=100,right=200,bottom=200,x=300,y=150,radius=80;
+initgraph(&gd,&gm,"c:\\TURBOC3\\BGI");
+rectangle(left,top,right,bottom);
+circle(x,y,radius);
+bar(left+300,top,right+300,bottom);
+line(left-10,top+150,left+410,top+150);
+ellipse(x,y+200,0,360,100,50);
+outtextxy(left+100,top+325,"My first C++ graphics program");
+getch();
+closegraph();
+}
+</pre>
+</p>
+
+<h3>prac 1(b):- prac1(b) Draw a co-ordinate axis at the center of the screen</h3>
+<p>
+    <pre> 
+#include graphics.h>
+#include conio.h>
+#include stdio.h>
+void main()
+{
+    int gd=DETECT,gm;
+    int midx,midy;
+    initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
+    midx=getmaxx()/2;
+    midy=getmaxy()/2;
+    line(1,midy,640,midy);
+    line(midx,1,midx,640);
+    getch();
+    closegraph();
+}
+</pre>
+</p>
+<h3>prac2(a):- prac2(a)Divide your screen into four region, draw circle,rectangle, ellipse and half ellipse in each region with appropriate message</h3>
+<p>
+    <pre>
+#include stdio.h>
+#include conio.h>
+#include graphics.h>
+void main()
+{
+int gd=DETECT,gm;
+int midx,midy;
+initgraph(&gd,&gm,"c:\\TURBOC3\\bgi");
+midx=getmaxx()/2;
+midy=getmaxy()/2;
+line(1,midy,840,midy);
+line(midx,1,midx,940);
+circle(150,130,50);
+outtextxy(130,200, "CIRCLE");
+rectangle(400,90,500,170);
+outtextxy(420,200,"RECTANGLE");
+arc(150,350,0,180,50);
+outtextxy(140,380,"ARC");
+ellipse(450,320,0,360,50,40);
+outtextxy(425,375,"ELLIPSE");
+getch();
+closegraph();
+}
+
+</pre>
+</p>
+
+<h3>prac 2(b):- Draw a simple hut on the screen</h3>
+<p>
+    <pre>
+#include graphics.h>
+#include conio.h>
+#include stdio.h>
+int main()
+{
+int gd=DETECT,gm;
+initgraph(&gd, &gm, "c:\\TURBOC3\\BGI");
+/* Draw Hut */
+setcolor(WHITE);
+rectangle(150,180,250,300);
+rectangle(250,180,420,300);
+rectangle(180,250,220,300);
+line(200,100,150,180);
+line(200,100,250,180);
+line(200,100,370,100);
+line(370,100,420,180);
+getch();
+closegraph();
+return 0;
+} 
+
+</pre>
+</p>
+
+<h3>prac3(a):- Basic shapes in the center of the screen(circle) </h3>
+<p>
+    <pre>
+#include stdio.h>
+#include graphics.h>
+#include conio.h>
+int main()
+{
+int gd=DETECT,gm;
+int x,y,radius=80;
+initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+x=getmaxx()/2;
+y = getmaxy()/2;
+outtextxy(160,50, "BASIC SHAPE AT THE CENTER OF SCREEN-CIRCLE");
+circle(x, y, radius);
+getch();
+closegraph();
+return 0;
+}
+</pre>
+</p>
+<h3>prac3(b):-  Basic shapes in the center of the screen(Concentric circle)</h3>
+<p>
+    <pre>#include stdio.h> 
+#include graphics.h>
+#include conio.h>
+int main(){
+int gd = DETECT,gm,color=1;
+int x,y,i;
+initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+x = getmaxx()/2;
+y = getmaxy()/2;
+outtextxy(160,20, "BASIC SHAPE AT THE CENTER OF SCREEN-CIRCLE");
+for(i=20;i<=200;i+=20){
+setcolor(color++);
+circle(x,y,i); }
+getch();
+closegraph();
+return 0;
+}
+</pre>
+</p>
+<h3>prac3(c):- Basic shapes in the center of the screen(Ellipse)</h3>
+<p>
+    <pre>#include stdio.h>
+#include graphics.h>
+#include conio.h>
+int main()
+{
+int gd = DETECT,gm;
+int x,y;
+initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+x = getmaxx()/2;
+y = getmaxy()/2;
+outtextxy(160,50, "BASIC SHAPE AT THE CENTER OF SCREEN- ellipse");
+ellipse(x, y, 0, 360, 120, 60);
+getch();
+closegraph();
+return 0;
+}
+
+</pre>
+</p>
+
+<h3>prac3(d):- prac3(d)basic shapes in the center of the screen(Rectangle)</h3>
+<p>
+    <pre>
+#include stdio.h>
+#include graphics.h>
+#include conio.h>
+int main(){
+int gd = DETECT,gm;
+int x,y;
+initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+outtextxy(160,50, "BASIC SHAPE AT THE CENTER OF SCREEN-RECTANGLE");
+rectangle(170,420,500,170);
+getch();
+closegraph();
+return 0;
+}
+</pre>
+</p>
+<h3>prac3(e):- prac3(e)basic shapes in the center of the screen(square)</h3>
+<p>
+    <pre>
+#include stdio.h> 
+#include graphics.h>
+#include conio.h> 
+int main()
+{
+int gd = DETECT,gm;
+int x,y;
+initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+outtextxy(160,50, "BASIC SHAPE AT THE CENTER OF SCREEN-SQUARE");
+rectangle(250,180,380,340);
+getch();
+closegraph();
+return 0;
+}
+</pre>
+</p>
+<h3>Prac3(f):- shapes in the center of the screen(line)</h3>
+<p>
+    <pre>
+#include stdio.h>
+#include graphics.h>
+#include conio.h>
+int main(){
+int gd=DETECT,gm;
+int x,y;
+initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+x=getmaxx()/2;
+y=getmaxy()/2;
+outtextxy(160,50, "BASIC SHAPE AT THE CENTER OF SCREEN-LINE");
+line(100,250,500,250);
+getch();
+closegraph();
+return 0;
+}
+
+</pre>
+</p>
+
+<h3>prac4(a):- prac4(a)Develop the program for DDA line drawing algorithm</h3>
+<p>
+    <pre>
+        #include graphics.h>
+            #include stdio.h>
+            #include math.h>
+            #include conio.h>
+            void main()
+            {
+            float x,y,x1,y1,x2,y2,dx,dy,pixel;
+            int i,gd,gm;
+            printf("Enter the value of x1,y1,x2,y2:");
+            scanf("%f%f%f%f",&x1,&y1,&x2,&y2);
+            detectgraph(&gd,&gm);
+            initgraph(&gd,&gm,"c:\\turboc3\\bgi");
+            dx=abs(x2-x1);
+            dy=abs(y2-y1);
+            if(dx>=dy)
+            pixel=dx;
+            else
+            pixel=dy;
+            dx=dx/pixel;
+            dy=dy/pixel;
+            x=x1;
+            y=y1;
+            i=1;
+            
+            (i < pixel) // write while and reduce the space in between i and pixel
+            {
+            putpixel(x,y,3);
+            x=x+dx;
+            y=y+dy;
+            i=i+1;
+            }
+            getch();
+            closegraph();
+            }
+</pre>
+</p>
+
+<h3>prac4(b):-Develop the program for Bresenhams line drawing algorithm</h3>
+<p>
+    <pre>
+#include graphics.h>
+#include stdio.h>
+#include math.h>
+#include conio.h>
+void main()
+{
+int x,y,x1,y1,x2,y2,dx,dy,p;
+int gd,gm;
+printf("Enter the co-ordiates of forst point: ");
+scanf("%d%d",&x1,&y1);
+printf("Enter the co-ordinates of second point :");
+scanf("%d%d",&x2,&y2);
+dx=(x2-x1);
+dy=(y2-y1);
+p=2*(dy)-(dx);
+x=x1;
+y=y1;
+detectgraph(&gd,&gm);
+initgraph(&gd,&gm,"c:\\turboc3\\bgi");
+putpixel(x,y,WHITE);
+while(x <= x2) //reduce the space in between x<=x2
+{
+if(p < 0) //reduce the space in  between p < 0 
+{
+x=x+1;
+y=y;
+p=p+2*(dy);
+
+}
+else
+{
+x=x+1;
+y=y+1;
+p=p+2*(dy-dx);
+}
+putpixel(x,y,WHITE);
+}
+getch();
+closegraph();
+}
+</pre>
+</p>
+
+<h3>prac5(a):- Develop the program for the mid-point circle drawing algorithm</h3>
+<p>
+    <pre>
+#include stdio.h>
+#include conio.h>
+#include graphics.h>
+void pixel(int xc,int yc,int x,int y);
+void main()
+{
+int gd=DETECT,gm,xc,yc,r,x,y,Pk;
+clrscr();
+initgraph(&gd,&gm,"c:\\turboc3\\bgi");
+printf("*** Bresenham's Midpoint Algorithm of circle ***\n");
+printf("Enter the value of xc: \t");
+scanf("%d",&xc);
+printf("Enter the value of yc: \t");
+scanf("%d",&yc);
+printf("Enter the Radius of circle: \t");
+scanf("%d",&r);
+x=0;
+y=r;
+Pk=1-r;
+pixel(xc,yc,x,y);
+while(x < y) //reduce the space in between x and y
+{
+if(Pk < 0) //reduce the space in between pk and 0
+{
+x=x+1;
+Pk=Pk+(2*x)+1;
+}
+else
+{
+x=x+1;
+y=y-1;
+Pk=Pk+(2*x)-(2*y)+1;
+}
+pixel(xc,yc,x,y);
+}
+getch();
+closegraph();
+}
+void pixel(int xc,int yc,int x,int y)
+{
+putpixel(xc+x,yc+y,7);
+putpixel(xc+y,yc+x,7);
+putpixel(xc-y,yc+x,7);
+putpixel(xc-x,yc+y,7);
+putpixel(xc-x,yc-y,7);
+putpixel(xc-y,yc-x,7);
+putpixel(xc+y,yc-x,7);
+putpixel(xc+x,yc-y,7);
+}
+</pre>
+</p>
+
+<h3>Prac5(b):-Develop the program for the mid-point ellipse drawing algorithm</h3>
+
+<p>
+    <pre>
+    #include stdio.h>
+#include conio.h>
+#include graphics.h>
+#include math.h>
+void disp();
+float x,y;
+int xc,yc;
+void main()
+{
+int gd=DETECT,gm,a,b;
+float p1,p2;
+clrscr();
+initgraph(&gd,&gm,"c://turboc3//bgi");
+printf("Enter the value of xc yc: \t");
+scanf("%d%d",&xc,&yc);
+printf("Enter the value of a b: \t");
+scanf("%d%d",&a,&b);
+x=0;
+y=b;
+disp();
+p1=(b*b)-(a*a*b)+(a*a)/4;
+while((2.0*b*b*x)<=(2.0*a*a*y))
+{
+x++;
+if(p1<=0)
+p1=p1+(2.0*b*b*x)+(b*b);
+else
+{
+y--;
+p1=p1+(2.0*b*b*x)+(b*b)-(2.0*a*a*y);
+}
+disp();
+x=-x;
+disp();
+x=-x;
+}
+x=a;
+y=0;
+disp();
+p2=(a*a)+2.0*(b*b*a)+(b*b)/4;
+while((2.0*b*b*x)>(2.0*a*a*y))
+{
+y++;
+if(p2>0)
+p2=p2+(a*a)-(2.0*a*a*y);
+else
+{
+x--;
+p2=p2+(2.0*b*b*x)-(2.0*a*a*y)+(a*a);
+}
+disp();
+y=-y;
+disp();
+y=-y;
+}
+getch();
+closegraph();
+}
+void disp()
+{
+putpixel(xc+x,yc+y,10);
+putpixel(xc-x,yc+y,10);
+putpixel(xc+x,yc-y,10);
+putpixel(xc+x,yc-y,10);
+}
+</pre>
+</p>
+
+<h3>prac6(a):- prac6(a)Write a program to implement 2D scaling</h3>
+<p>
+    <pre>
+#include graphics.h>
+#include stdlib.h>
+#include math.h>
+#include stdio.h>
+#include conio.h>
+int  main()
+{
+int i,gd=DETECT,gm;
+int x2,y2,x1,y1,x,y;
+initgraph(&gd,&gm,"c:\\turboc3\\bgi");
+printf("Enter the 2 Line end points: x1,y1,x2,y2:\n");
+scanf("%d%d%d%d",&x1,&y1,&x2,&y2);
+line(x1,y1,x2,y2);
+
+printf("\n Enter The scaling co-ordinates;x\t y\t \n");
+scanf("%d %d",&x,&y);
+x1=(x1*x);
+y1=(y1*y);
+x2=(x2*x);
+y2=(y2*y);
+printf("Line Afer Scaling");
+line(x1,y1,x2,y2);
+getch();
+closegraph();
+return 0;
+}
+</pre>
+</p>
+
+<h3>prac6(b):-write a program to perform 2D Transaltion </h3>
+<p>
+    <pre>
+#include graphics.h>
+#include stdio.h>
+#include math.h>
+#include conio.h>
+int main()
+{
+int i, gd=DETECT,gm;
+int x2,y2,x1,y1,x,y;
+initgraph(&gd,&gm,"c:\\turboc3\\bgi");
+printf("nter the 2 line end points :x1,y1,x2,y2:\n");
+scanf("%d\n %d\n %d\n %d",&x1,&y1,&x2,&y2);
+line(x1,y1,x2,y2);
+printf("\n Enter the scaling co-ordinates ;x\t y\t \n");
+scanf("%d%d",&x,&y);
+x1=x1+x;
+y1=y1+y;
+x2=x2+x;
+y2=y2+y;
+printf("Line After translation");
+line(x1,y1,x2,y2);
+getch();
+closegraph();
+return 0;
+}
+</pre>
+</p>
+<h3>Prac7(a):- prac7(a)Perform 2D Rotation on an given object</h3>
+<p>
+    <pre>
+#include conio.h>
+#include graphics.h>
+#include stdio.h>
+#include math.h>
+#include stdlib.h>
+int main()
+{
+int gd=DETECT,gm;
+int i, x2,y2,x1,y1,x,y,xn,yn;
+double r11,r12,r21,r22,th;
+clrscr();
+initgraph(&gd,&gm,"c:\\turboc3\\bgi");
+printf("Enter the 2 line end points x1,y1,x2,y2");
+scanf("%d%d%d%d",&x1,&y1,&x2,&y2);
+
+line(x1,y1,x2,y2);
+
+printf("\n \n Enter the Angle:\t");
+scanf("%f",&th);
+r11=cos((th*3.1428)/180);
+r12=sin((th*3.1428)/180);
+r21=(-sin((th*3.1428)/180));
+r22=cos((th*3.1428)/180);
+xn=((x2*r11)-(y2*12));
+yn=((x2*r12)+(y2*11));
+line(x1,y1,xn,yn);
+getch();
+closegraph();
+return 0;
+}
+</pre>
+</p>
+
+<h3>Prac7(b):- prac7(b)Perform to create a house and perform 1)scaling with origin 2)scaling with arbitary point 3)Translation,Arbitary point,line y=mx+c (1)</h3>
+<p>
+    <pre>
+#include stdio.h>
+#include graphics.h>
+#include stdlib.h>
+#include math.h>
+#include conio.h>
+void reset(int h[][2])
+{
+int val[9][2] = {
+{50,50},{75,50},{75,75},{100,75},
+{100,50},{125,50},{125,100},{87,125},{50,100}
+};
+int i;
+for(i=0;i< 9;i++) //reduce the spac3e in between i and 9 
+{
+h[i][0] = val[i][0]-50;
+h[i][1] = val[i][1]-50;
+}
+}
+void draw(int h[][2])
+{
+int i;
+setlinestyle(DOTTED_LINE,0,1);
+line(320,0,320,480);
+line(0,240,640,240);
+setlinestyle(SOLID_LINE,0,1);
+for(i=0;i<8;i++)
+/*line(320+h[i][0],240-h[i][1],320+h[i+1][0],240-h[i+1][1]);
+line(320+h[0][0],240-h[0][1],320+h[8][0],240-h[8][1]);
+}
+void rotate(int h[][2],float angle)
+{
+int i;
+for(i=0;i<9;i++)
+{
+int xnew,ynew;
+xnew = h[i][0] * cos(angle) - h[i][1] * sin(angle);
+ynew = h[i][0] * sin(angle) + h[i][1] * cos(angle);
+h[i][0]=xnew;
+h[i][1] =ynew;
+}
+}
+void scale(int h[][2],int sx,int sy)
+{
+int i;
+for(i=0;i<9;i++)
+{
+h[i][0] *= sx;
+h[i][1] *= sy;
+}
+}
+void translate(int h[][2],int dx,int dy)
+{
+int i;
+for(i=0;i<9;i++)
+{
+h[i][0] += dx;
+h[i][1] += dy;
+}
+}
+void reflect(int h[][2],int m,int c)
+{
+int i;
+float angle;
+for(i=0;i<9;i++)
+h[i][1]-=c;
+angle = M_PI/2-atan(m);
+rotate(h,angle);
+for(i=0;i<9;i++)
+h[i][1] += c;
+}
+void ini()
+{
+int gd = DETECT,gm;
+initgraph(&gd,&gm,"c:\\TURBOC3\\BGI");
+}
+void dini()
+{
+getch();
+closegraph();
+}
+void main()
+{
+int h[9][2],sx,sy,x,y,m,c,choice;
+do
+{
+clrscr();
+printf("1:- Scaling about the origin:\n");
+printf("2:- Scaling about an Arbiatary point:\n");
+printf("3:- Reflection about the line y = mx + c:\n");
+printf("4:- Exit :\n");
+printf("Enter  the choice: \n");
+scanf("%d",&choice);
+switch(choice)
+{
+case 1: printf("Enter the xd-and y-calling factors: \n");
+scanf("%d%d",&sx,&sy);
+ini();
+reset(h);
+draw(h);
+getch();
+scale(h,sx,sy);
+cleardevice();
+draw(h);
+dini();
+break;
+case 2: printf("Enter the x-and y-scalling factors:\n");
+scanf("%d%d",&sx,&sy);
+printf("Enter the x-and y-coordinates of the point:\n");
+scanf("%d%d",&x,&y);
+ini();
+reset(h);
+translate(h,x,y);
+draw(h);
+getch();
+cleardevice();
+translate(h,-x,-y);
+draw(h);
+getch();
+cleardevice();
+scale(h,sx,sy);
+draw(h);
+getch();
+translate(h,x,y);
+cleardevice();
+draw(h);
+putpixel(320+x,240-y,WHITE);
+dini();
+break;
+case 3:printf("Enter The value of m and c:\n");
+scanf("%d%d",&m,&c);
+ini();
+reset(h);
+draw(h);
+getch();
+reflect(h,m,c);
+cleardevice();
+draw(h);
+dini();
+break;
+case 4: exit(0);
+}
+}
+while(choice!=4);
+}
+*/
+</pre>
+</p>
